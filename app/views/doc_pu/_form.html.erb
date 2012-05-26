@@ -1,6 +1,6 @@
 <div class="box">
-<% labelled_tabular_form_for :doc, @doc, :url => {:id => @doc, :project_id => @project} do |f| %>
-	<%= error_messages_for :doc %>
+<%= labelled_form_for :doc, @doc, :url => {:id => @doc, :project_id => @project}, :html => {:class => "tabular"} do |f| %>
+	<%= error_messages_for "doc_pu" %>
 	
 	<div class="splitcontentleft">
 		<p><%= f.text_field :name, :size => 30, :required => true %></p>

@@ -8,12 +8,12 @@ Created by: Christian Raschko
 Install RedCloth gem
 <tt>gem install RedCloth</tt>
 
-clone this plugin in vendor/plugins
+clone this plugin in $REDMINE_PATH/plugins
 
-<tt>git clone git://github.com/erikkallen/redmine_doc_pu.git</tt>
+<tt>git clone git://github.com/mkinski/redmine_doc_pu.git</tt>
 
 migrate plugins
 
-<tt>rake db:migrate:plugins RAILS_ENV=production</tt>
+<tt>rake redmine:plugins:migrate RAILS_ENV=production</tt>
 
 restart redmine

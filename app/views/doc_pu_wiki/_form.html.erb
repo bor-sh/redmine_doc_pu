@@ -1,6 +1,6 @@
 <div class="box">
-<% labelled_tabular_form_for :doc_pu_wiki, @doc_pu_wiki, :url => {:project_id => @project, :doc_pu_id => @doc_pu} do |f| %>
-	<%= error_messages_for :doc_pu_wiki %>
+<%= labelled_form_for :doc_pu_wiki, @doc_pu_wiki, :url => {:project_id => @project, :doc_pu_id => @doc_pu}, :html => {:class => "tabular"} do |f| %>
+	<%= error_messages_for "doc_pu_wiki" %>
 	
 	<div class="splitcontentleft">
 		<p><%= f.select :wiki_page_id, options_from_collection_for_select(@project.wiki.pages, :id, :title, @doc_pu_wiki.wiki_page_id), :required => true %></p>
