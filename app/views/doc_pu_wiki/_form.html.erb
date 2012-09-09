@@ -1,5 +1,5 @@
 <div class="box">
-<%= labelled_form_for :doc_pu_wiki, @doc_pu_wiki, :url => {:project_id => @project, :doc_pu_id => @doc_pu}, :html => {:class => "tabular"} do |f| %>
+<%= labelled_form_for :doc_pu_wiki, @doc_pu_wiki, :url => {:project_id => @project, :doc_pu_id => @doc_pu, :id =>@doc_pu_wiki}, :html => {:class => "tabular"} do |f| %>
 	<%= error_messages_for "doc_pu_wiki" %>
 	
 	<div class="splitcontentleft">
