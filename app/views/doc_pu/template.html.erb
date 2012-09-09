@@ -7,11 +7,11 @@
 	<div style="height:400px" class="box autoscroll">
 		<table>
 			<tbody>
-				<% @code.each do |l| %> 
-					<tr>
-						<td><%= l %></td>
-					</tr>
-				<% end %>
+                <% @code.each_line do |l| %> 
+                    <tr>
+                        <td><%= l %></td>
+                    </tr>
+                <% end %>
 			</tbody>
 		</table>
 	</div>
