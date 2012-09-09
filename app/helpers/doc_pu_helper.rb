@@ -10,7 +10,8 @@ module DocPuHelper
 				a.push(p.wiki_page.title)
 			end
 		end
-		return "(#{pages.count}): " + a.join(", ")
+		
+		return raw "(#{pages.count}): " + a.join(", ")
 	end
 
 	# Print version number string
@@ -30,7 +31,7 @@ module DocPuHelper
 	end
 	
 	def acronym_info_tag(str)
-		return "<acronym title=\"#{str}\">(?)</acronym>"
+		return raw "<acronym title=\"#{str}\">(?)</acronym>"
 	end
 	
 	def flash_msg(err)
