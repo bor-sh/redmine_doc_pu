@@ -7,8 +7,8 @@ Created by: Christian Raschko
 
 = Install
 
-Install gems using bundler
-You might need to use sudo
+Install gems using bundler. You might need to use sudo
+
 <tt>bundle install</tt>
 
 clone this plugin in $REDMINE_PATH/plugins
