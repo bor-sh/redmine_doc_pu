@@ -12,13 +12,27 @@
 	<div class="flash warning"><%=t :text_press_build_button %></div>
 </div>
 <p>
-<%= button_to_remote t(:button_build),
-	:url => {:controller => :doc_pu, :action => :build_remote, :project_id => @project, :id => @doc},
-	:update => "log-result";
+
+<%= submit_tag t(:button_build), :type => 'button',
+    :onclick => raw("new jQuery.ajax('" +
+                        url_for({:controller => :doc_pu, :action => :build_remote, :project_id => @project, :id => @doc}) + 
+                        "',{async:true, dataType: 'html', 
+                        success: function(response) {
+                            $('#log-result').html(response);
+                        }
+                        });"
+                        )
 %>
 
-<%= button_to_remote t(:button_clean),
-	:url => {:controller => :doc_pu, :action => :clean_remote, :project_id => @project, :id => @doc},
-	:update => "log-result";
+<%= submit_tag t(:button_clean), :type => 'button',
+    :onclick => raw("new jQuery.ajax('" +
+                        url_for({:controller => :doc_pu, :action => :clean_remote, :project_id => @project, :id => @doc}) + 
+                        "',{async:true, dataType: 'html', 
+                        success: function(response) {
+                            $('#log-result').html(response);
+                        }
+                        });"
+                        )
 %>
+
 <%= acronym_info_tag t(:info_build_latex_multiple_times) %>
