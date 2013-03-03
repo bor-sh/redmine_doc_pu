@@ -19,7 +19,7 @@ Redmine::Plugin.register :redmine_doc_pu do
     :partial => "settings/doc_pu_settings"
 
   # Redmine version
-  requires_redmine :version_or_higher => "2.0.0"
+  requires_redmine :version_or_higher => "2.1.0"
 
   # Create project module
   project_module :doc_pu do
