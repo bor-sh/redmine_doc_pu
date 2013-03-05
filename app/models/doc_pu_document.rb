@@ -11,6 +11,9 @@ class DocPuDocument < ActiveRecord::Base
 	validates_presence_of :name, :template, :user_id, :project_id
 	validates_uniqueness_of :name
 
+	before_save      :do_before_save
+	after_initialize :do_after_init
+
 	include ModuleLatexFlags
 	include ModuleLatexDoc
 
@@ -28,12 +31,12 @@ class DocPuDocument < ActiveRecord::Base
 		return self.doc_pu_wiki_pages.all
 	end
 
-	def after_initialize()
+	def do_after_init()
 		self.flags_from_str(self.doc_flags)
 		return true
 	end
 
-	def before_save()
+	def do_before_save()
 		self.doc_flags = self.flags_to_str()
 		return true
 	end
